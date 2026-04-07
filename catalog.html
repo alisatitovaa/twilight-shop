@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог | Twilight Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">🌲 Twilight Store</a>
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Главная</a>
+                <a href="catalog.html" class="nav__link active">Каталог</a>
+                <a href="index.html#about" class="nav__link">О нас</a>
+                <a href="index.html#contacts" class="nav__link">Контакты</a>
+            </nav>
+            <div class="header__actions">
+                <div class="theme-toggle">
+    <button class="theme-btn" data-theme="light" title="Светлая тема">☀️</button>
+    <button class="theme-btn" data-theme="dark" title="Тёмная тема">🌙</button>
+</div>
+                <button class="icon-btn" id="favoritesBtn" title="Избранное">
+                    <span class="icon">❤️</span>
+                    <span class="badge" id="favoritesCount">0</span>
+                </button>
+                <button class="icon-btn" id="cartBtn" title="Корзина">
+                    <span class="icon">🛒</span>
+                    <span class="badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Боковые панели (такие же как на главной) -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar__header">
+            <h3>🛒 Ваша корзина</h3>
+            <button class="close-btn" id="closeCartBtn">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty">Корзина пуста</p>
+        </div>
+        <div class="cart-sidebar__footer">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span id="cartTotal">0 ₽</span>
+            </div>
+            <a href="checkout.html" class="btn btn--primary btn--full" id="checkoutBtn">Оформить заказ</a>
+        </div>
+    </div>
+
+    <div class="favorites-sidebar" id="favoritesSidebar">
+        <div class="favorites-sidebar__header">
+            <h3>❤️ Избранное</h3>
+            <button class="close-btn" id="closeFavoritesBtn">✕</button>
+        </div>
+        <div class="favorites-items" id="favoritesItems">
+            <p class="favorites-empty">Нет избранных товаров</p>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main>
+        <div class="container">
+            <h1 class="page-title">🛍️ Каталог</h1>
+
+            <!-- Вкладки категорий -->
+            <div class="catalog-tabs">
+                <button class="tab-btn active" data-category="all">Все товары</button>
+                <button class="tab-btn" data-category="coven">🧛 Команда Эдварда</button>
+                <button class="tab-btn" data-category="pack">🐺 Команда Джейкоба</button>
+                <button class="tab-btn" data-category="fathers">👔 Нестареющая классика</button>
+                <button class="tab-btn" data-category="others">🍎 Остальные</button>
+            </div>
+
+            <!-- Сетка товаров -->
+            <div class="products-grid" id="catalogProducts"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Twilight Store. И в Форксе иногда светит солнце.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

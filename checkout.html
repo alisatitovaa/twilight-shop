@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа | Twilight Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">🌲 Twilight Store</a>
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Главная</a>
+                <a href="catalog.html" class="nav__link">Каталог</a>
+                <a href="index.html#about" class="nav__link">О нас</a>
+                <a href="index.html#contacts" class="nav__link">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container container--small">
+            <h1 class="page-title">📦 Оформление заказа</h1>
+
+            <div class="checkout-container">
+                <!-- Состав заказа -->
+                <div class="checkout-summary">
+                    <h3>Ваш заказ</h3>
+                    <div class="checkout-items" id="checkoutItems"></div>
+                    <div class="checkout-totals">
+                        <div class="total-row">
+                            <span>Товары:</span>
+                            <span id="subtotal">0 ₽</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Доставка:</span>
+                            <span id="shipping">0 ₽</span>
+                        </div>
+                        <div class="total-row total-row--final">
+                            <span>Итого:</span>
+                            <span id="finalTotal">0 ₽</span>
+                        </div>
+                    </div>
+
+                    <!-- Промокод -->
+                    <div class="promo-input">
+                        <input type="text" id="promoCodeInput" placeholder="Промокод">
+                        <button class="btn btn--secondary" id="applyPromoBtn">Применить</button>
+                    </div>
+                    <p class="promo-message" id="promoMessage"></p>
+                </div>
+
+                <!-- Форма доставки -->
+                <form class="checkout-form" id="orderForm">
+                    <h3>Данные для доставки</h3>
+
+                    <div class="form-group">
+                        <label>Имя *</label>
+                        <input type="text" id="customerName" required placeholder="Белла Свон">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="customerEmail" required placeholder="bella@forks.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Телефон *</label>
+                        <input type="tel" id="customerPhone" required placeholder="+7 (999) 123-45-67">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Адрес доставки *</label>
+                        <input type="text" id="customerAddress" required placeholder="г. Форкс, ул. Главная, д. 1">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Способ оплаты *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="card" checked> 💳 Картой онлайн
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="cash"> 💵 Наличными при получении
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="blood"> 🩸 Банк крови (шутка)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Комментарий к заказу</label>
+                        <textarea id="orderComment" rows="3" placeholder="Например: Положить записку от Эдварда..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--large">✅ Подтвердить заказ</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Twilight Store. И в Форксе иногда светит солнце.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>
